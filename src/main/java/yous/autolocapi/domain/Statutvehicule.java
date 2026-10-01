@@ -1,5 +1,5 @@
 package yous.autolocapi.domain;
 
-public enum statutvehicule {
+public enum Statutvehicule {
     DISPONIBLE, LOUE, MAINTENANCE
 }

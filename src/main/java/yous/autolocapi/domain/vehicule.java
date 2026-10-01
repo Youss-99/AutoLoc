@@ -23,10 +23,10 @@ public class vehicule {
     private String modele;
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
-    private categorievehicule categorie;
+    private Categorievehicule categorie;
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal tarifJournalier;
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
-    private statutvehicule statut;
+    private Statutvehicule statut;
 }

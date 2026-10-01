@@ -1,5 +1,5 @@
 package yous.autolocapi.domain;
 
-public enum categorievehicule {
+public enum Categorievehicule {
     CITADINE, BERLINE, SUV, UTILITAIRE
 }
