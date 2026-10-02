@@ -4,14 +4,17 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import java.math.BigDecimal;
+import java.util.Set;
+
 @Entity
 @Table(name = "vehicule")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class vehicule {
+public class Vehicule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idVehicule;
@@ -29,4 +32,12 @@ public class vehicule {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
     private Statutvehicule statut;
+    @OneToMany(mappedBy = "vehicule")
+    private Set<Reservation> reservations;
+    @OneToMany(mappedBy = "vehicule")
+    private Set<Maintenance> maintenances;
+    @ManyToMany
+    private Set<Equipement> equipements;
+    @ManyToOne
+    private Agence agence;
 }

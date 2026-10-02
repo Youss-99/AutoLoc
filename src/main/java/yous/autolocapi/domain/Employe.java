@@ -2,9 +2,13 @@ package yous.autolocapi.domain;
 import jakarta.persistence.*;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 
@@ -15,8 +19,10 @@ public class Employe {
     private Long idEmploye;
     private String nom;
     private String prenom;
-    private String rome;
     @Enumerated(EnumType.STRING)
-    private RoleEmploye Role;
+    private RoleEmploye role;
+
+    @ManyToOne
+    private Agence agence;
 
 }
